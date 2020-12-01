@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PhoneBook.Repository
 {
-    public class AddressBookRepository
+    public class AddressBookRepository: IAddressBookRepository
     {
         private readonly IUnitOfWorkModel<AddressBook> _unitOfWork;
 

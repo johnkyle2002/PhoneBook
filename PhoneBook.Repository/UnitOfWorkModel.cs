@@ -35,10 +35,7 @@ namespace PhoneBook.Repository
         /// <summary>
         /// Gets the entity.
         /// </summary>
-        public DbSet<TModel> Entity
-        {
-            get { return _context.Set<TModel>(); }
-        }
+        public DbSet<TModel> Entity => _context.Set<TModel>();
 
         #endregion
 

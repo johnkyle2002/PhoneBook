@@ -1,7 +1,12 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PhoneBook.Interface\PhoneBook.Interface.csproj" />
+    <ProjectReference Include="..\PhoneBook.Shared\PhoneBook.Shared.csproj" />
+  </ItemGroup>
 
 </Project>
