@@ -4,6 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PhoneBook.BusinessLogic;
+using PhoneBook.Interface.BusinessLogic;
+using PhoneBook.Interface.Repository;
 using PhoneBook.Repository;
 
 namespace PhoneBook.Blazor
@@ -22,6 +25,10 @@ namespace PhoneBook.Blazor
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<PhoneBookDBContext>(o => o.UseInMemoryDatabase(databaseName:"PhoneBookDBContext"));
+
+            services.AddScoped(typeof(IUnitOfWorkModel<>), typeof(UnitOfWorkModel<>));
+            services.AddScoped<IAddressBookBusinessLogic, AddressBookBusinessLogic>();
+            services.AddScoped<IAddressBookRepository, AddressBookRepository>();
 
             services.AddRazorPages();
             services.AddServerSideBlazor(); 

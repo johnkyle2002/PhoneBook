@@ -2,7 +2,6 @@
 using PhoneBook.DataTransferModel;
 using PhoneBook.Interface.BusinessLogic;
 using PhoneBook.Interface.Repository;
-using PhoneBook.Shared.Extension;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

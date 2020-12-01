@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PhoneBook.BusinessLogic\PhoneBook.BusinessLogic.csproj" />
+    <ProjectReference Include="..\PhoneBook.Interface\PhoneBook.Interface.csproj" />
     <ProjectReference Include="..\PhoneBook.Repository\PhoneBook.Repository.csproj" />
   </ItemGroup>
 

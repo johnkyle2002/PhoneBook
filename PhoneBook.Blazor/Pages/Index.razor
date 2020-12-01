@@ -1,7 +1,23 @@
 ﻿@page "/"
 
-<h1>Hello, world!</h1>
+<h3>Create Address Book</h3>
+<hr />
 
-Welcome to your new app.
+<EditForm Model="@AddressBook" OnValidSubmit="@ValidateAddressAsync">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <span class="text-danger">@Error</span>
+    <div class="form-inline">
+        <label class="sr-only" for="inputName">Name</label>
+        <input type="text" @bind-value="@AddressBook.Name" class="form-control mb-2 mr-sm-2" id="inputName" placeholder="Name"> 
+        <label class="sr-only" for="inlineFormInputGroupUsername2">Phone</label>
+        <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"></div>
+            </div>
+            <input type="tel" @bind-value="@AddressBook.PhoneNo" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Phone">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Add</button> 
+    </div>
+</EditForm>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
