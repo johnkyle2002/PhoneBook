@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PhoneBook.Interface\PhoneBook.Interface.csproj" />
     <ProjectReference Include="..\PhoneBook.Model\PhoneBook.Model.csproj" />
   </ItemGroup>
 
