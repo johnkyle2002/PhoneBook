@@ -19,6 +19,13 @@ namespace PhoneBook.Repository
 
         public async Task<OperationResult<AddressBook>> AddAsync(AddressBook addressBook)
         {
+            if(await _unitOfWork.Entity.CountAsync() >= 300)
+                return new OperationResult<AddressBook>
+                {
+                    Message = "Exceed maximun limit."
+                };
+
+
             if (await _unitOfWork.Entity.AnyAsync(e => e.Name == addressBook.Name || e.PhoneNo == addressBook.PhoneNo))
                 return new OperationResult<AddressBook>
                 {
