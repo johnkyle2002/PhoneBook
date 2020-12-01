@@ -19,8 +19,11 @@ namespace PhoneBook.Repository
 
         public async Task<OperationResult<AddressBook>> AddAsync(AddressBook addressBook)
         {
-            if(await _unitOfWork.Entity.AnyAsync(e=> e.Name ==))
-
+            if (await _unitOfWork.Entity.AnyAsync(e => e.Name == addressBook.Name || e.PhoneNo == addressBook.PhoneNo))
+                return new OperationResult<AddressBook>
+                {
+                    Message = "Already registered."
+                };
 
 
             if (await _unitOfWork.AddAsync(addressBook))
