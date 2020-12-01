@@ -1,0 +1,51 @@
+﻿@page "/search"
+ 
+<div class="card">
+    <div class="card-header">Address Book List</div>
+    <div class="card-body">
+        <div class="form-inline">
+            <label class="mb-2 mr-sm-2" for="">Search</label>
+            <label class="sr-only" for="phoneNumber">Name</label>
+            <input type="text" @bind-value="@Phone" class="form-control mb-2 mr-sm-2" id="phoneNumber" placeholder="Phone Number">
+
+            <label class="sr-only" for="nameInput">Username</label>
+            <input type="text" @bind-value="@Name" class="form-control mb-2 mr-sm-2" id="nameInput" placeholder="Name">
+
+            <button type="button" class="btn btn-primary mb-2" @onclick="SearchAsync">Search</button>
+        </div>
+        <hr />
+        @if (AddressBooks != null)
+        {
+            @if (AddressBooks.Any())
+            {
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th width="250">Phone</th>
+                            <th>Name</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in AddressBooks)
+                        {
+                            <tr>
+                                <td>@item.PhoneNo</td>
+                                <td>@item.Name</td>
+                                <td></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <p class="text-muted">No result found.</p>
+            }
+        }
+        else
+        {
+            <p class="text-muted">No Address book identified.</p>
+        }
+    </div>
+</div>

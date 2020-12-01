@@ -8,6 +8,7 @@ namespace PhoneBook.Interface.BusinessLogic
     public interface IAddressBookBusinessLogic
     {
         Task<OperationResult<AddressBook>> AddAsync(AddressBook addressBook);
-        Task<IEnumerable<AddressBook>> GetAllAsync(); 
+        Task<IEnumerable<AddressBook>> GetAllAsync();
+        Task<IEnumerable<AddressBook>> GetSearchAsync(string name, string phone);
     }
 }
