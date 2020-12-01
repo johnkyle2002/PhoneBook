@@ -10,7 +10,7 @@ namespace PhoneBook.Model
         [Required]
         [DataType(DataType.PhoneNumber)]
         [MinLength(11)]
-        [RegularExpression(@"^[\+0]\d{2}(\d)?(\([\d-.]+\))?[\d-.]+\d$", ErrorMessage = "Phone Number is not valid")]
+        [RegularExpression(@"^[\+0](?!0)\d{2}(\d)?(\([\d-.]+\))?[\d-.]+\d$", ErrorMessage = "Phone Number is not valid")]
         public string PhoneNo { get; set; }
 
         [RegularExpression(@"^([\sA-Za-z]+)$")]
